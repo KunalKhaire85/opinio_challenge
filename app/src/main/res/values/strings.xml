@@ -4,4 +4,6 @@
     <string name="two">Indira Nagar</string>
     <string name="three">Koramangala</string>
     <string name="four">MAjestic</string>
+    <string name="new_game">Settings</string>
+    <string name="help">Help</string>
 </resources>
