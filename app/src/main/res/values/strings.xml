@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Opinio Client</string>
+    <string name="one">MG Road</string>
+    <string name="two">Indira Nagar</string>
+    <string name="three">Koramangala</string>
+    <string name="four">MAjestic</string>
 </resources>

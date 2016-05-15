@@ -10,10 +10,10 @@ import android.support.v4.app.TaskStackBuilder;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,30 +26,27 @@ import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener{
+
+    TextView one;
+    TextView two;
+    TextView three;
+    TextView four;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.location_layout);
 
+        one = (TextView) findViewById(R.id.oneView);
+        two = (TextView) findViewById(R.id.twoView);
+        three = (TextView) findViewById(R.id.threeView);
+        four = (TextView) findViewById(R.id.fourView);
 
-        GridView gridview = (GridView) findViewById(R.id.gridview);
-        gridview.setAdapter(new ImageAdapter(this));
-
-        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View v,
-                                    int position, long id) {
-
-            //this is a dummy post to signal to the server that the user has changed location,ideally this should be in a background thread
-                postUsingUrlConnection();
-
-            //this is a dummy notification to the device.Ideally we are expecting GCM to send notification to this client.
-                showNotification();
-            }
-        });
-
-
+        one.setOnClickListener(this);
+        two.setOnClickListener(this);
+        three.setOnClickListener(this);
+        four.setOnClickListener(this);
     }
 
     /**
@@ -87,7 +84,20 @@ public class MainActivity extends AppCompatActivity {
         mNotificationManager.notify(1, mBuilder.build());
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.oneView){
 
+        }else if (v.getId() == R.id.twoView){
+
+        }else if (v.getId() == R.id.threeView){
+
+        }else if (v.getId() == R.id.fourView){
+
+        }
+
+        showNotification();
+    }
 
 
     public class ImageAdapter extends BaseAdapter {
